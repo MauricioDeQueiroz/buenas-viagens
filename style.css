@@ -1,5 +1,5 @@
 
-/*RESET CSS: garante que fique igual nos navegadores*/
+/*RESET CSS: styling across browsers*/
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +7,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    /* rola a página suavemente ao clicar em links âncora */
+    scroll-behavior: smooth; /* smooth scroll when clicking anchor links */
 }
 
 body {
@@ -22,11 +21,65 @@ ul {
 
 a {
     text-decoration: none;
-    color: inherit; /* herda a cor do elemento pai */
+    color: inherit; /* inherits color from parent element */
 }
 
 button {
     cursor: pointer;
     border: none;
     font-family: 'Poppins', sans-serif;
+}
+
+/*NavBar*/
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #1A1A6E;
+}
+
+.nav-links {
+    display: flex;
+    gap: 36px;
+}
+
+.nav-links a {
+    font-size: 16px;
+    color: #333333;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #F5A623;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    font-size: 24px;
+    color: #333333;
+}
+
+/*Centers content and adds side spacing*/
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
