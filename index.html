@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <!-- NavBar -->
     <header class="navbar">
@@ -31,9 +35,32 @@
     </header>
 
     <main>
-        <!-- page section will go here -->
+        <section class="hero">
+            <img src="images/hero.jpg" alt=" Travel landscape with moutains and lake"
+                class="hero-bg" />
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>EXPLORE O MUNDO!</h1>
+                <div class="hero-search">
+                    <input type="text" placeholder="Para onde vamos?" aria-label="Destino">
+
+                    <div class="search-field">
+                        <label>Quando?</label>
+                        <input type="date" aria-label="Data de ida" />
+                    </div>
+
+                    <div class="search-field">
+                        <label>Retorno</label>
+                        <input type="date" aria-label="Data de retorno">
+                    </div>
+
+                    <button class="btn-buscar">Buscar</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
