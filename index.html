@@ -36,27 +36,26 @@
 
     <main>
         <section class="hero">
-            <img src="images/hero.jpg" alt=" Travel landscape with moutains and lake"
-                class="hero-bg" />
+            <img src="images/hero.jpg" alt=" Travel landscape with moutains and lake" class="hero-bg" />
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1>EXPLORE O MUNDO!</h1>
                 <div class="hero-search-wrapper">
-                <div class="hero-search">
-                <div class="search-field">
-                    <label>Para onde vamos?</label>
-                    <input type="text" placeholder="Informe o destino" aria-label="Destino">
-                </div>
-                <div class="search-field">
-                    <label>Quando?</label>
-                    <input type="date" aria-label="Data de ida" />
-                </div>
-                <div class="search-field">
-                    <label>Retorno</label>
-                    <input type="date" aria-label="Data de retorno">
-                </div>
-                <button class="btn-buscar">Buscar</button>
-            </div>
+                    <div class="hero-search">
+                        <div class="search-field">
+                            <label>Para onde vamos?</label>
+                            <input type="text" placeholder="Informe o destino" aria-label="Destino">
+                        </div>
+                        <div class="search-field">
+                            <label>Quando?</label>
+                            <input type="date" aria-label="Data de ida" />
+                        </div>
+                        <div class="search-field">
+                            <label>Retorno</label>
+                            <input type="date" aria-label="Data de retorno">
+                        </div>
+                        <button class="btn-buscar">Buscar</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -64,29 +63,119 @@
         <section class="passeios" id="passeios">
             <div class="container passeios-grid">
 
-                <div class="texto-linha">
-                    <div class="passeios-texto">
-                        <h2>Próximos Passeios & Destinos</h2>
+                <div class="passeios-texto">
+                    <h2>Próximos Passeios & Destinos</h2>
                     <div class="linha-decorativa"></div>
                     <p>Eligendi, unde neque libero, ab officia laboriosam alias
-                    consequuntur laborum eveniet ipsa ex! Rerum architecto
-                    dolorum totam quae, magni minima at vero quas voluptas
-                    laboriosam autem accusamus nulla eaque officia ipsum
-                    distinctio, et inventore facilis vitae consequatur quod
-                    omnis voluptates ipsa? Libero inventore dolores
-                    necessitatibus omnis voluptate. Sit, officia accusantium
-                    consequatur commodi eum deleniti et dolores deserunt
-                    accusamus cupiditate animi recusandae assumenda.
-                    Similique, eveniet.</p>
-                        <button class="btn-saiba">Saiba mais</button>
-                    </div>
+                        consequuntur laborum eveniet ipsa ex! Rerum architecto
+                        dolorum totam quae, magni minima at vero quas voluptas
+                        laboriosam autem accusamus nulla eaque officia ipsum
+                        distinctio, et inventore facilis vitae consequatur quod
+                        omnis voluptates ipsa? Libero inventore dolores
+                        necessitatibus omnis voluptate. Sit, officia accusantium
+                        consequatur commodi eum deleniti et dolores deserunt
+                        accusamus cupiditate animi recusandae assumenda.
+                        Similique, eveniet.</p>
+                    <button class="btn-saiba">Saiba mais</button>
                 </div>
 
                 <div class="passeios-fotos">
-                    <img src="images/familia.jfif" alt=""> 
-                    <img src="images/casal.jfif" alt="">
-                    <img src="images/camera.webp" alt="">
-                    <img src="images/vista.jfif" alt="">
+                    <img src="images/familia.jfif" alt="Family walking on the beach" />
+                    <img src="images/casal.jfif" alt="Couple with backpacks watching the landscape" />
+                    <img src="images/camera.webp" alt="Woman with hat taking photos on a tour" />
+                    <img src="images/vista.jfif" alt="Woman sitting alone watching the sunset" />
+                </div>
+            </div>
+        </section>
+
+        <section class="destinos" id="destinos">
+            <div class="container">
+                <h2 class="destinos-titulo">Para onde você quer viajar?</h2>
+
+                <div class="destinos-grid">
+                    <article class="card-destino">
+                        <img src="images/barcelona.jfif" alt="Barcelona, Spain" />
+                        <div class="card-body">
+                            <p class="card-cidade">Barcelona <span>Espanha</span></p>
+                            <p class="card-desc">Pariatur autem harum ratione eveniet porro quidem distinctio,
+                                laudantium ducimus ipsam temporibus.</p>
+                            <div class="card-precos">
+                                <span class="preco-novo">R$ 3.900,00</span>
+                                <span class="preco-antigo">R$ 4.440,00</span>
+                                <button class="btn-saiba btn-card">Saiba mais</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-destino">
+                        <img src="images/porto.jfif" alt="Ribeira waterfront in Porto, Portugal" />
+                        <div class="card-body">
+                            <p class="card-cidade">Porto <span>Portugal</span></p>
+                            <p class="card-desc">Pariatur autem harum ratione eveniet porro quidem distinctio,
+                                laudantium ducimus ipsam temporibus.</p>
+                            <div class="card-precos">
+                                <span class="preco-novo">R$ 3.700,00</span>
+                                <span class="preco-antigo">R$ 4.300,00</span>
+                                <button class="btn-saiba btn-card">Saiba mais</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-destino">
+                        <img src="images/milao.jfif" alt="Milan Cathedral in Milan, Italy" />
+                        <div class="card-body">
+                            <p class="card-cidade">Milão <span>Itália</span></p>
+                            <p class="card-desc">Pariatur autem harum ratione eveniet porro quidem distinctio,
+                                laudantium ducimus ipsam temporibus.</p>
+                            <div class="card-precos">
+                                <span class="preco-novo">R$ 3.500,00</span>
+                                <span class="preco-antigo">R$ 4.200,00</span>
+                                <button class="btn-saiba btn-card">Saiba mais</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-destino">
+                        <img src="images/londres.jfif" alt="Big Ben and red bus in London, England" />
+                        <div class="card-body">
+                            <p class="card-cidade">Londres <span>Inglaterra</span></p>
+                            <p class="card-desc">Pariatur autem harum ratione eveniet porro quidem distinctio,
+                                laudantium ducimus ipsam temporibus.</p>
+                            <div class="card-precos">
+                                <span class="preco-novo">R$ 4.200,00</span>
+                                <span class="preco-antigo">R$ 4.900,00</span>
+                                <button class="btn-saiba btn-card">Saiba mais</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-destino">
+                        <img src="images/suica.jfif" alt="Road on Suiça" />
+                        <div class="card-body">
+                            <p class="card-cidade">Lauterbrunnen <span>Suiça</span></p>
+                            <p class="card-desc">Pariatur autem harum ratione eveniet porro quidem distinctio,
+                                laudantium ducimus ipsam temporibus.</p>
+                            <div class="card-precos">
+                                <span class="preco-novo">R$ 3.900,00</span>
+                                <span class="preco-antigo">R$ 4.300,00</span>
+                                <button class="btn-saiba btn-card">Saiba mais</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card-destino">
+                        <img src="images/paris.jfif" alt="Eiffel Tower in Paris, France" />
+                        <div class="card-body">
+                            <p class="card-cidade">Paris <span>França</span></p>
+                            <p class="card-desc">Pariatur autem harum ratione eveniet porro quidem distinctio,
+                                laudantium ducimus ipsam temporibus.</p>
+                            <div class="card-precos">
+                                <span class="preco-novo">R$ 4.500,00</span>
+                                <span class="preco-antigo">R$ 5.300,00</span>
+                                <button class="btn-saiba btn-card">Saiba mais</button>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
