@@ -37,4 +37,24 @@ document.addEventListener('DOMContentLoaded', function(){
             showSlide(current + 1);
         })
     }
+
+    const newsLetterInput = document.querySelector('.newsletter input[type="email"]');
+    const newsLetterBtn = document.querySelector('.btn-enviar');
+
+    if (newsLetterInput && newsLetterBtn) {
+        newsLetterBtn.addEventListener('click', function(){
+            const emailValue = newsLetterInput.value.trim(); // removes empty spaces
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation regex
+
+            if (emailRegex == '') {
+                alert('Por favor, insira um endereço de email válido.');
+            } else if (!emailRegex.test(emailValue)) {
+                alert('Por favor, insira um endereço de email válido.');
+            } else {
+                alert('Obrigado por se inscrever na nossa newsletter!');
+                newsLetterInput.value = ''; // Clear the input field after successful submission
+            }
+        })
+    }
 })
