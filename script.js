@@ -57,4 +57,31 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         })
     }
+
+
+    // contextual keyboard navigation for carrousel slider
+    const slideWrapper = document.querySelector('.avaliacoes');
+    let isMouseOverSlider = false;
+
+    if (slideWrapper) {
+        slideWrapper.addEventListener('mouseenter', function() {
+            isMouseOverSlider = true;
+        });
+
+        slideWrapper.addEventListener('mouseleave', function() {
+            isMouseOverSlider = false;
+        });
+    }
+
+    // Global keydown listener: 'e' is the event object automatically passed by the browser containing key metadata
+    document.addEventListener('keydown', function (e) {
+        if (slides.length > 0 && isMouseOverSlider) {
+            if (e.key === 'ArrowLeft') {
+                showSlide(current - 1);
+            } else if (e.key === 'ArrowRight') {
+                showSlide(current + 1);
+            }
+        }
+    });
+
 })
