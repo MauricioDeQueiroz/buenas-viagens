@@ -58,6 +58,36 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     }
 
+    const newLocaationInput = document.querySelector('.search-field input[type="text"]');
+    const newDateInput = document.querySelector('input[aria-label="Data de ida"]');
+    const newDateReturn = document.querySelector('input[aria-label="Data de retorno"]');
+    const newLocaationBnt = document.querySelector('.btn-buscar');
+
+    if (newLocaationInput && newDateInput && newDateReturn && newLocaationBnt) {
+        newLocaationBnt.addEventListener('click', function() {
+
+            // Cleans and gets the values
+            const locationValue = newLocaationInput.value.trim();
+            const dateValue = newDateInput.value;
+            const returnDateValue = newDateReturn.value;
+
+            if (locationValue === '' || dateValue === '') {
+                alert('Por favor, preencha corretamente os campos obrigatórios.');
+            } 
+            else if (returnDateValue === '') {
+                alert(`Busca realizada! Destino: ${locationValue} - Ida: ${dateValue} (Sem retorno definido).`);
+                newLocationInput.value = '';
+                newDateInput.value = '';
+            } 
+            else {
+                alert(`Busca realizada! Destino: ${locationValue} - Ida: ${dateValue} - Retorno: ${returnDateValue}.`);
+                newLocationInput.value = '';
+                newDateInput.value = '';
+                newDateReturn.value = '';
+            }
+        })
+    }
+
 
     // contextual keyboard navigation for carrousel slider
     const slideWrapper = document.querySelector('.avaliacoes');
