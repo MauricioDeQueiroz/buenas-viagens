@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation regex
 
-            if (emailRegex == '') {
+            if (emailValue == '') {
                 alert('Por favor, insira um endereço de email válido.');
             } else if (!emailRegex.test(emailValue)) {
                 alert('Por favor, insira um endereço de email válido.');
@@ -58,16 +58,16 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     }
 
-    const newLocaationInput = document.querySelector('.search-field input[type="text"]');
+    const newLocationInput = document.querySelector('.search-field input[type="text"]');
     const newDateInput = document.querySelector('input[aria-label="Data de ida"]');
     const newDateReturn = document.querySelector('input[aria-label="Data de retorno"]');
-    const newLocaationBnt = document.querySelector('.btn-buscar');
+    const newLocationBtn = document.querySelector('.btn-buscar');
 
-    if (newLocaationInput && newDateInput && newDateReturn && newLocaationBnt) {
-        newLocaationBnt.addEventListener('click', function() {
+    if (newLocationInput && newDateInput && newDateReturn && newLocationBtn) {
+        newLocationBtn.addEventListener('click', function() {
 
             // Cleans and gets the values
-            const locationValue = newLocaationInput.value.trim();
+            const locationValue = newLocationInput.value.trim();
             const dateValue = newDateInput.value;
             const returnDateValue = newDateReturn.value;
 
@@ -114,4 +114,19 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
+    // MOBILE NAVIGATION TOGGLE
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    if (navToggle && navLinksContainer) {
+        navToggle.addEventListener('click', function() {
+            navLinksContainer.classList.toggle('active');
+            
+            if (navLinksContainer.classList.contains('active')) {
+                navToggle.innerHTML = '&times;';
+            } else {
+                navToggle.innerHTML = '&#9776;';
+            }
+        });
+    }
 })
