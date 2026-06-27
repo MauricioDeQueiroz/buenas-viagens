@@ -2,9 +2,23 @@
 document.addEventListener('DOMContentLoaded', function(){
 
     const slides = document.querySelectorAll('.slide');
-    const btnPrev = document.getElementById('slidePrev');
-    const btnNext = document.getElementById('slideNext');
+    const dotsContainer = document.getElementById('slideDots');
     let current = 0; // Tracks the index of the currently active slide
+
+    // Build one dot per slide, generated dynamically so the count follows slides.length
+    const dots = [];
+    if (dotsContainer) {
+        slides.forEach(function(slide, i){
+            const dot = document.createElement('button');
+            dot.setAttribute('aria-label', 'Ir para avaliação ' + (i + 1));
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', function(){
+                goToSlide(i);
+            });
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+        });
+    }
 
     function showSlide(index){
         if (slides.length === 0) return;
@@ -20,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function(){
         next.style.opacity= '0'; // Reset opacity before making the element visible
         next.classList.add('active');
 
+        // Keep the active dot in sync with the current slide
+        dots.forEach(function(dot, i){
+            dot.classList.toggle('active', i === current);
+        });
+
         // Double requestAnimationFrame forces the browser to trigger the CSS opacity transition smoothly
         requestAnimationFrame(function(){
             requestAnimationFrame(function(){
@@ -28,14 +47,11 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
-    if (btnPrev && btnNext) {
-        btnPrev.addEventListener('click', function(){
-            showSlide(current - 1);
-        });
-
-        btnNext.addEventListener('click', function(){
-            showSlide(current + 1);
-        })
+    // Dot navigation: jump to a slide and restart the timer so it doesn't advance right after a click
+    function goToSlide(index){
+        showSlide(index);
+        stopAutoplay();
+        startAutoplay();
     }
 
     const newsLetterInput = document.querySelector('.newsletter input[type="email"]');
@@ -89,30 +105,29 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
 
-    // contextual keyboard navigation for carrousel slider
-    const slideWrapper = document.querySelector('.avaliacoes');
-    let isMouseOverSlider = false;
+    // Autoplay: advance every 4s, paused while the mouse is over the section
+    let autoplayTimer = null;
 
-    if (slideWrapper) {
-        slideWrapper.addEventListener('mouseenter', function() {
-            isMouseOverSlider = true;
-        });
-
-        slideWrapper.addEventListener('mouseleave', function() {
-            isMouseOverSlider = false;
-        });
+    function startAutoplay(){
+        if (slides.length === 0) return;
+        autoplayTimer = setInterval(function(){
+            showSlide(current + 1);
+        }, 4000);
     }
 
-    // Global keydown listener: 'e' is the event object automatically passed by the browser containing key metadata
-    document.addEventListener('keydown', function (e) {
-        if (slides.length > 0 && isMouseOverSlider) {
-            if (e.key === 'ArrowLeft') {
-                showSlide(current - 1);
-            } else if (e.key === 'ArrowRight') {
-                showSlide(current + 1);
-            }
-        }
-    });
+    function stopAutoplay(){
+        clearInterval(autoplayTimer);
+    }
+
+    // Pause autoplay while the mouse is over the reviews section, resume when it leaves
+    const slideWrapper = document.querySelector('.avaliacoes');
+
+    if (slideWrapper) {
+        slideWrapper.addEventListener('mouseenter', stopAutoplay);
+        slideWrapper.addEventListener('mouseleave', startAutoplay);
+    }
+
+    startAutoplay(); // kick off the auto-advance on load
 
     // MOBILE NAVIGATION TOGGLE
     const navToggle = document.querySelector('.nav-toggle');

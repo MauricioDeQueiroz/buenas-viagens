@@ -408,21 +408,6 @@ button {
   margin: 0 auto;
 }
 
-.slide-btn {
-  background: #cccccc;
-  color: #ffffff;
-  border-radius: 8px;
-  width: 45px;
-  height: 55px;
-  font-size: 22px;
-  flex-shrink: 0; /* prevents arrows from shrinking */
-  transition: background 0.3s ease;
-}
-
-.slide-btn:hover {
-  background: #999999;
-}
-
 .slide-track {
   flex: 1;
   position: relative;
@@ -468,6 +453,34 @@ button {
   font-size: 14px;
   font-weight: 700;
   color: #333333;
+}
+
+/* Carousel dots */
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.slide-dots button {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #cccccc;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slide-dots button:hover {
+  background: #999999;
+}
+
+.slide-dots button.active {
+  background: #f5a623;
+  transform: scale(1.2);
 }
 
 .footer {
@@ -714,12 +727,6 @@ button {
     gap: 12px;
     width: 100%;
     padding: 0 12px;
-  }
-
-  .slide-btn {
-    width: 40px;
-    height: 50px;
-    font-size: 20px;
   }
 
   .slide-texto {
